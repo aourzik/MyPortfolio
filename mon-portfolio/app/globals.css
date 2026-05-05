@@ -328,30 +328,32 @@ section {
 /* ============ Nav ============ */
 .nav-wrap {
   position: fixed;
-  top: 18px;
+  top: 20px;
   left: 0;
-  right: 0;
-  z-index: 50;
+  width: 100%;
   display: flex;
   justify-content: center;
-  pointer-events: none;
-  padding: 0 16px;
+  z-index: 1000;
+  padding: 0 20px;
 }
 
 .nav {
-  pointer-events: auto;
+  /* 1. AGRANDISSEMENT */
+  height: 55px;
+  padding: 0 35px;
+  min-width: 650px;
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 7px 7px 7px 18px;
-  border-radius: var(--r-pill);
-  background: rgba(26, 22, 22, 0.6);
-  border: 1px solid var(--line-2);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 20px 50px rgba(0, 0, 0, 0.4);
+  justify-content: space-between;
+  border-radius: 100px;
+  /* 2. EFFET VERRE POLI (Glassmorphism) */
+  background: rgba(26, 22, 22, 0.35);; 
+  backdrop-filter: blur(50px) saturate(200%);
+  -webkit-backdrop-filter: blur(50px) saturate(200%);
+  border: 1px solid rgba(229, 208, 205, 0.25);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 [data-theme="light"] .nav {
@@ -361,10 +363,31 @@ section {
 .nav-brand {
   font-family: var(--font-display);
   font-style: italic;
+  font-weight: 700;
   font-size: 18px;
   padding-right: 14px;
   border-right: 1px solid var(--line);
   margin-right: 6px;
+  color: var(--fg-0);
+  transition: opacity 0.3s ease;
+}
+
+.nav-brand:hover {
+  opacity: 0.7;
+  color: var(--color-sand);
+}
+
+.nav-link {
+  margin: 0 15px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg-1);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--color-sand);
 }
 
 .nav a.nav-link {
@@ -382,19 +405,18 @@ section {
 }
 
 .nav .cta {
-  font-size: 13px;
-  padding: 9px 16px;
-  border-radius: var(--r-pill);
   background: var(--color-sand);
-  /* Bouton couleur Sable */
   color: #1a1616;
-  /* Texte sombre pour le contraste */
+  padding: 10px 22px;
+  border-radius: 50px;
   font-weight: 600;
-  transition: 0.25s ease;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
 .nav .cta:hover {
-  transform: translateY(-1px);
+  transform: scale(1.05);
 }
 
 /* ============ Hero ============ */
@@ -1227,6 +1249,11 @@ section {
 
 .proj-screen .ln.m {
   width: 65%;
+}
+
+.proj-screen .canvas .ln, 
+.proj-screen .canvas .grid {
+    display: none; 
 }
 
 .proj-screen .grid {

@@ -11,11 +11,11 @@ export default function AboutTimeline() {
 
 /* ============ Section Timeline ============ */
 const tlData = [
-    { year: "2014 — 2023", title: "Ergonome", org: "Industrie · UX Research", desc: "Dix années à étudier comment les humains interagissent avec les systèmes complexes. Tests utilisateurs, analyses cognitives, recommandations terrain." },
-    { year: "2023", title: "Le pivot", org: "Une décision, beaucoup de questions", desc: "Le constat : les meilleurs designs meurent dans le brief si personne ne sait les coder. Je décide d'apprendre l'autre moitié du métier." },
-    { year: "2024 — 2025", title: "Holberton School", org: "Toulouse · Full-Stack", desc: "Bootcamp intensif. C, Python, JavaScript, algorithmes, systèmes, devOps. Apprendre à apprendre, vite et profondément." },
-    { year: "2025", title: "Premiers projets", org: "Hbnb · Coroller · ReadMe", desc: "Du clone Airbnb façon Bridgerton aux apps mobiles, je construis ma boîte à outils sur des projets vrais — chacun avec ses contraintes." },
-    { year: "2026 — Now", title: "Open to work", org: "Web Developer Full-Stack", desc: "Je cherche une équipe où la qualité d'exécution compte autant que l'idée. Idéalement produit, idéalement ambitieuse." },
+    { year: "2018", title: "Ergonome", org: "Santé Sécurité · UX Research", desc: "Des années à étudier comment les humains interagissent avec les systèmes complexes. Tests utilisateurs, analyses cognitives, recommandations terrain." },
+    { year: "2023", title: "Le pivot", org: "Une décision, beaucoup de questions", desc: "Le constat : les meilleurs designs meurent si personne ne sait les coder. Je décide d'apprendre l'autre moitié du métier." },
+    { year: "2025", title: "Holberton School", org: "Toulouse · Full-Stack", desc: "Bootcamp intensif. C, Python, JavaScript, algorithmes, systèmes, devOps. Apprendre à apprendre, vite et profondément." },
+    { year: "Fin 2025", title: "Premiers projets", org: "Hbnb · Coroller · ReadMe", desc: "Du clone Airbnb façon Bridgerton aux apps mobiles, je construis ma boîte à outils sur des projets vrais — chacun avec ses contraintes." },
+    { year: "2026 — Now", title: "Open to work", org: "Web Developer Full-Stack en Alternance", desc: "Je cherche une équipe où la qualité d'exécution compte autant que l'idée et où l'accompagnement et l'apprentissage sont valorisés." },
 ];
 
 const TimelineSection = () => {

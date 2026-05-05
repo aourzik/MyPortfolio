@@ -6,9 +6,9 @@ import { LucideIconName } from 'lucide-react'; // Si Claude utilise des icônes
 
 /* ============ 3D Carousel ============ */
 const projects3D = [
-    { name: "Hbnb — Duchess & Duke", tech: "REACT · NODE · MONGO", c1: "#7c3aed", c2: "#d946ef" },
-    { name: "Coroller Illustrations", tech: "NEXT.JS · SANITY · GSAP", c1: "#ec4899", c2: "#a855f7" },
-    { name: "ReadMe", tech: "REACT NATIVE · FIREBASE", c1: "#3b82f6", c2: "#8b5cf6" },
+    { name: "Hbnb — Duchess & Duke", tech: "REACT · PYTHON · SQLLITE", c1: "#7c3aed", c2: "#d946ef" },
+    { name: "Coroller Illustrations", tech: "REACT · NODEJS · SQL", c1: "#ec4899", c2: "#a855f7" },
+    { name: "ReadMe", tech: "FLUTTER · NODEJS", c1: "#3b82f6", c2: "#8b5cf6" },
 ];
 
 const Carousel3D = () => {
@@ -81,7 +81,7 @@ const HeroA = () => (
             <div className="hero-meta reveal reveal-d3">
                 <div className="pill"><span className="live"></span> OPEN TO WORK</div>
                 <div className="pill">TOULOUSE — FR</div>
-                <div className="pill">EST. 2024</div>
+                <div className="pill">EST. 2025</div>
             </div>
         </div>
         <Carousel3D />

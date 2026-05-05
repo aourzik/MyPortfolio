@@ -9,34 +9,36 @@ const projectsData = [
         n: "01",
         title: "Hbnb — Duchess & Duke",
         desc: "Un clone d'Airbnb transposé dans l'univers des Bridgerton. Réservations de manoirs, calendriers, paiements simulés — le tout dans une esthétique Régence.",
-        tags: ["React", "Node.js", "MongoDB", "Express", "JWT"],
+        tags: ["React", "Vite", "SQLLite", "Python", "JWT"],
         role: "Full-Stack",
         year: "2025",
         duration: "6 sem.",
-        repo: "github.com/ainy/hbnb",
-        // c1 est ta couleur fixe (vieux rose foncé), les autres varient
+        repo: "https://github.com/aourzik/holbertonschool-hbnb",
+        image: "/duchess_duke.png",
         c1: "#5b3a3a", c2: "#FFE289", c3: "#C98C8C", c4: "#E5D0CD",
     },
     {
         n: "02",
         title: "Coroller Illustrations & Crochet",
         desc: "Site vitrine pour une créatrice indépendante : galerie d'œuvres, boutique et carnet d'inspiration. Esthétique douce, animations soignées.",
-        tags: ["Next.js", "Sanity CMS", "GSAP", "Stripe"],
-        role: "Design + Dev",
-        year: "2025",
+        tags: ["React", "Node.js", "SQL"],
+        role: "Full-Stack",
+        year: "2026",
         duration: "4 sem.",
-        repo: "github.com/ainy/coroller",
+        repo: "https://github.com/aourzik/coroller_illustration_crochet",
+        image: "/coroller.png",
         c1: "#5b3a3a", c2: "#C98C8C", c3: "#FFE289", c4: "#d9b3b3",
     },
     {
         n: "03",
         title: "ReadMe",
         desc: "Application mobile pour recenser et partager ses lectures entre amis. Bibliothèque perso, recommandations, fil social — un Goodreads à taille humaine.",
-        tags: ["React Native", "Firebase", "Expo", "Zustand"],
+        tags: ["Flutter", "Node.js", "Expo", "Zustand"],
         role: "Mobile · Full-Stack",
-        year: "2025",
+        year: "2026",
         duration: "5 sem.",
-        repo: "github.com/ainy/readme",
+        repo: "https://github.com/aourzik/ReadMe_App",
+        image: "",
         c1: "#5b3a3a", c2: "#8d7373", c3: "#E5D0CD", c4: "#C98C8C",
     }
 ];
@@ -45,6 +47,18 @@ const ProjectScreen = ({ p }) => (
     <div className="proj-screen">
         <div className="bar"><span></span><span></span><span></span><div className="url">{p.repo}</div></div>
         <div className="canvas">
+            <img 
+                src={p.image} 
+                alt={p.title}
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'top center',
+                    transition: 'transform 0.5s ease'
+                }}
+                className="project-img"
+            />
             <div className="ln s"></div>
             <div className="ln m"></div>
             <div className="ln s"></div>
@@ -72,8 +86,8 @@ const ProjectsStacked = () => (
                             {p.tags.map(t => <span key={t} className="tag">{t}</span>)}
                         </div>
                         <div className="proj-actions">
-                            <a href="#" className="primary">Voir le projet ↗</a>
-                            <a href="#">Code</a>
+                            <a href={p.repo} className="primary" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                            <a href={p.repo} target="_blank" rel="noopener noreferrer">Code</a>
                         </div>
                     </div>
                 </div>
@@ -143,9 +157,6 @@ const Projects = ({ layout }) => (
     </section>
 );
 
-
-// Ajoute ça tout en bas de projects-footer.jsx
-// Remplace ton composant ProjectsFooter par celui-ci
 const ProjectsFooter = () => (
     <>
         {/* On précise ici le style que l'on veut afficher */}

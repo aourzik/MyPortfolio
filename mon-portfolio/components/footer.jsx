@@ -15,7 +15,7 @@ const Footer = () => (
             <div>© 2026 — AÏNY OURZIK</div>
             <div className="links">
                 <a href="mailto:hello@ainy.dev">EMAIL</a>
-                <a href="#">GITHUB</a>
+                <a href="https://github.com/aourzik">GITHUB</a>
                 <a href="#">LINKEDIN</a>
                 <a href="#">CV.PDF</a>
             </div>
