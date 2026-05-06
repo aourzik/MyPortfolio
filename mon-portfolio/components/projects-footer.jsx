@@ -38,37 +38,89 @@ const projectsData = [
         year: "2026",
         duration: "5 sem.",
         repo: "https://github.com/aourzik/ReadMe_App",
-        image: "",
+        image: "/readme.png",
+        isMobile: true,
         c1: "#5b3a3a", c2: "#8d7373", c3: "#E5D0CD", c4: "#C98C8C",
     }
 ];
 
-const ProjectScreen = ({ p }) => (
-    <div className="proj-screen">
-        <div className="bar"><span></span><span></span><span></span><div className="url">{p.repo}</div></div>
-        <div className="canvas">
-            <img 
-                src={p.image} 
-                alt={p.title}
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'top center',
-                    transition: 'transform 0.5s ease'
-                }}
-                className="project-img"
-            />
-            <div className="ln s"></div>
-            <div className="ln m"></div>
-            <div className="ln s"></div>
-            <div className="grid">
-                <div className="tile"></div><div className="tile"></div><div className="tile"></div>
-                <div className="tile"></div><div className="tile"></div><div className="tile"></div>
+const ProjectScreen = ({ p }) => {
+    // Si c'est un projet mobile, on applique un style de "téléphone"
+    if (p.isMobile) {
+        return (
+            <div className="proj-screen mobile-style" style={{
+                background: 'transparent',
+                border: 'none',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100%'
+            }}>
+                <div className="phone-frame" style={{
+                    width: '220px', // Largeur d'un téléphone dans la carte
+                    height: '90%',
+                    backgroundColor: '#000',
+                    borderRadius: '32px',
+                    border: '6px solid #1a1616', // Le cadre du téléphone
+                    position: 'relative',
+                    overflow: 'hidden',
+                    boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
+                }}>
+                    {/* Petite encoche (Notch) */}
+                    <div style={{
+                        position: 'absolute',
+                        top: '0',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '80px',
+                        height: '18px',
+                        backgroundColor: '#1a1616',
+                        borderBottomLeftRadius: '10px',
+                        borderBottomRightRadius: '10px',
+                        zIndex: 10
+                    }}></div>
+
+                    <img
+                        src={p.image}
+                        alt={p.title}
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                        }}
+                    />
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="proj-screen">
+            <div className="bar"><span></span><span></span><span></span><div className="url">{p.repo}</div></div>
+            <div className="canvas">
+                <img
+                    src={p.image}
+                    alt={p.title}
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'top center',
+                        transition: 'transform 0.5s ease'
+                    }}
+                    className="project-img"
+                />
+                <div className="ln s"></div>
+                <div className="ln m"></div>
+                <div className="ln s"></div>
+                <div className="grid">
+                    <div className="tile"></div><div className="tile"></div><div className="tile"></div>
+                    <div className="tile"></div><div className="tile"></div><div className="tile"></div>
+                </div>
             </div>
         </div>
-    </div>
-);
+    );
+};
 
 const ProjectsStacked = () => (
     <div className="projects-stack">
