@@ -13,17 +13,17 @@ const AboutSection = () => (
 
         <div className="bento">
             <div className="card b-portrait reveal reveal-d1">
-                <img 
-                src="/Ainy.png" 
-                alt="Portrait de Aïny Ourzik" 
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    position: 'absolute',
-                    inset: 0,
-                    opacity: 0.9
-                        }}
+                <img
+                    src="/Ainy.png"
+                    alt="Portrait de Aïny Ourzik"
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        position: 'absolute',
+                        inset: 0,
+                        opacity: 0.9
+                    }}
                 />
                 <div className="ph" style={{ position: 'relative', zIndex: 1, background: 'transparent' }}>PORTRAIT — Aïny OURZIK</div>
             </div>
@@ -31,9 +31,8 @@ const AboutSection = () => (
             <div className="card b-bio reveal reveal-d2">
                 <div className="label">Bio · Parcours</div>
                 <div className="body">
-                    Initialement <span className="em">ergonome</span>, je traque les frictions
-                    d'usage depuis dix ans. En reconversion via la <span className="em">Holberton School</span>,
-                    je transforme cette obsession en code propre et interfaces vivantes.
+                    Initialement <span className="em">ergonome</span>, j'ai passé ma carrière à traquer le moindre détail pour simplifier la vie des utilisateurs. En reconversion via la <span className="em">Holberton School</span>,
+                    je transforme cette expertise en code propre et interfaces vivantes.
                 </div>
             </div>
 
@@ -48,7 +47,7 @@ const AboutSection = () => (
             </div>
 
             <div className="card b-loc reveal reveal-d2" style={{ position: 'relative', overflow: 'hidden' }}>
-    {/* Carte Interactive */}
+                {/* Carte Interactive */}
                 <iframe
                     title="Map Toulouse"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184764.12073867663!2d1.291361546257348!3d43.60067930491871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb6fec7552ff%3A0x408f909890a8510!2sToulouse!5e0!3m2!1sfr!2sfr!4v1715678901234!5m2!1sfr!2sfr"
@@ -66,14 +65,14 @@ const AboutSection = () => (
                     loading="lazy"
                 ></iframe>
 
-            {/* Ton contenu par-dessus */}
-            <div className="content" style={{ position: 'relative', zIndex: 2, pointerEvents: 'none' }}>
-                <div className="label">Basée à</div>
-                <div className="value" style={{ fontSize: 26, color: 'var(--color-sand)' }}>Toulouse</div>
-            </div>
+                {/* Ton contenu par-dessus */}
+                <div className="content" style={{ position: 'relative', zIndex: 2, pointerEvents: 'none' }}>
+                    <div className="label">Basée à</div>
+                    <div className="value" style={{ fontSize: 26, color: 'var(--color-sand)' }}>Toulouse</div>
+                </div>
 
-            {/* Le petit point de localisation stylisé */}
-            <div className="pin" style={{ zIndex: 2 }}></div>
+                {/* Le petit point de localisation stylisé */}
+                <div className="pin" style={{ zIndex: 2 }}></div>
             </div>
 
             <div className="card b-quote reveal reveal-d3">
