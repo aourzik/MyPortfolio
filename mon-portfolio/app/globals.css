@@ -106,6 +106,42 @@ button {
   color: #fff;
 }
 
+/* Cache le vrai curseur sur desktop */
+@media (padding-bottom: 768px) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button {
+    cursor: none;
+  }
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 226, 137, 0.3);
+  /* Couleur Sable */
+  border: 1px solid var(--color-sand);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background 0.3s;
+  backdrop-filter: blur(2px);
+}
+
+/* Effet quand on survole un lien */
+body:has(a:hover) .custom-cursor {
+  width: 50px;
+  height: 50px;
+  background: rgba(201, 140, 140, 0.2);
+  /* Devient Rose au survol */
+  border-color: var(--color-rose);
+}
+
 /* ============ Mesh background ============ */
 .mesh-stage {
   position: fixed;
