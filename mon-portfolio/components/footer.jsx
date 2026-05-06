@@ -16,51 +16,65 @@ const Icons = {
     )
 };
 
-const Footer = () => (
-    <footer id="contact" className="footer-v2">
-        <div className="eyebrow"><span className="dot"></span> 04 — ON SE PARLE ?</div>
+const Footer = () => {
+    const [copied, setCopied] = React.useState(false);
 
-        <div className="foot-content-wrapper">
-            {/* GAUCHE : Titre */}
-            <div className="foot-left">
-                <h2 className="foot-cta">
-                    Construisons<br />
-                    <span className="grad">quelque chose</span><br />
-                    ensemble.
-                </h2>
-            </div>
+    const handleEmailClick = () => {
+        navigator.clipboard.writeText("a.ourzik@gmail.com");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
 
-            {/* DROITE : Les icônes */}
-            <div className="foot-right">
-                <div className="floating-contact-grid">
-                    <a href="mailto:hello@ainy.dev" className="contact-tile t1">
-                        <Icons.Mail />
-                        <span className="tile-name">Email</span>
-                    </a>
+    return (
+        <footer id="contact" className="footer-v2">
+            <div className="eyebrow"><span className="dot"></span> 04 — ON SE PARLE ?</div>
 
-                    <a href="https://github.com/aourzik" target="_blank" rel="noopener noreferrer" className="contact-tile t2">
-                        <Icons.Github />
-                        <span className="tile-name">Github</span>
-                    </a>
+            <div className="foot-content-wrapper">
+                <div className="foot-left">
+                    <h2 className="foot-cta">
+                        Construisons<br />
+                        <span className="grad">quelque chose</span><br />
+                        ensemble.
+                    </h2>
+                </div>
 
-                    <a href="https://linkedin.com/in/ainy-ourzik" target="_blank" rel="noopener noreferrer" className="contact-tile t3">
-                        <Icons.Linkedin />
-                        <span className="tile-name">LinkedIn</span>
-                    </a>
+                <div className="foot-right">
+                    <div className="floating-contact-grid">
+                        <a
+                            href="mailto:a.ourzik@gmail.com"
+                            className="contact-tile t1"
+                            onClick={handleEmailClick}
+                        >
+                            <Icons.Mail />
+                            <span className="tile-name">
+                                {copied ? "Copié !" : "Email"}
+                            </span>
+                        </a>
 
-                    <a href="/Ainy_Ourzik_CV.pdf" target="_blank" download className="contact-tile t4 highlight">
-                        <Icons.FileText />
-                        <span className="tile-name">CV ↓</span>
-                    </a>
+                        <a href="https://github.com/aourzik" target="_blank" rel="noopener noreferrer" className="contact-tile t2">
+                            <Icons.Github />
+                            <span className="tile-name">Github</span>
+                        </a>
+
+                        <a href="https://linkedin.com/in/ainy-ourzik" target="_blank" rel="noopener noreferrer" className="contact-tile t3">
+                            <Icons.Linkedin />
+                            <span className="tile-name">LinkedIn</span>
+                        </a>
+
+                        <a href="/Ainy_Ourzik_CV.pdf" target="_blank" download className="contact-tile t4 highlight">
+                            <Icons.FileText />
+                            <span className="tile-name">CV ↓</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div className="foot-bottom">
-            <div>© 2026 — AÏNY OURZIK</div>
-            <div>TOULOUSE — FR</div>
-        </div>
-    </footer>
-);
+            <div className="foot-bottom">
+                <div>© 2026 — AÏNY OURZIK</div>
+                <div>TOULOUSE — FR</div>
+            </div>
+        </footer>
+    );
+}; // <-- L'accolade doit se fermer ICI
 
-export default Footer;
+export default Footer; // <-- L'export doit être TOUT SEUL en bas

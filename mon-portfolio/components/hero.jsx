@@ -6,9 +6,27 @@ import { LucideIconName } from 'lucide-react'; // Si Claude utilise des icônes
 
 /* ============ 3D Carousel ============ */
 const projects3D = [
-    { name: "Hbnb — Duchess & Duke", tech: "REACT · PYTHON · SQLLITE", c1: "#7c3aed", c2: "#d946ef" },
-    { name: "Coroller Illustrations", tech: "REACT · NODEJS · SQL", c1: "#ec4899", c2: "#a855f7" },
-    { name: "ReadMe", tech: "FLUTTER · NODEJS", c1: "#3b82f6", c2: "#8b5cf6" },
+    {
+        name: "Hbnb — Duchess & Duke",
+        tech: "REACT · PYTHON · SQLLITE",
+        c1: "#7c3aed",
+        c2: "#d946ef",
+        image: "/dd.png" // <--- Ajoute le chemin ici
+    },
+    {
+        name: "Coroller Illustrations",
+        tech: "REACT · NODEJS · SQL",
+        c1: "#ec4899",
+        c2: "#a855f7",
+        image: "/coro.png" // <--- Et ici
+    },
+    {
+        name: "ReadMe",
+        tech: "FLUTTER · NODEJS",
+        c1: "#3b82f6",
+        c2: "#8b5cf6",
+        image: "/readme.png" // <--- Et là
+    },
 ];
 
 const Carousel3D = () => {
@@ -34,16 +52,20 @@ const Carousel3D = () => {
                                     <div className="url">{p.name.toLowerCase().replace(/[^a-z]/g, "")}.app</div>
                                 </div>
                                 <div className="body">
-                                    <div className="mock">
-                                        <div className="row med"></div>
-                                        <div className="row short"></div>
-                                        <div className="grid2">
-                                            <div className="tile"></div>
-                                            <div className="tile"></div>
-                                            <div className="tile"></div>
-                                            <div className="tile"></div>
-                                        </div>
+                                    {/* On remplace tout le contenu de "mock" par ton image */}
+                                    <div className="mock" style={{ padding: 0, overflow: 'hidden' }}>
+                                        <img
+                                            src={p.image}
+                                            alt={p.name}
+                                            style={{
+                                                width: '100%',
+                                                height: '100%',
+                                                objectFit: 'cover', // L'image remplira bien le cadre
+                                                display: 'block'
+                                            }}
+                                        />
                                     </div>
+
                                     <div className="label">
                                         <div className="tech">{p.tech}</div>
                                         <div className="name">{p.name}</div>
